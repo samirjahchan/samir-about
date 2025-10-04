@@ -1,0 +1,145 @@
+:root {
+  --bg: #0b0c10;
+  --fg: #e8eaed;
+  --muted: #9aa0a6;
+  --card: #111317;
+  --acc: #7dd3fc;
+  --chip: #1f2937;
+  --chip-fg: #e5e7eb;
+  --link: #60a5fa;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --fg: #0f172a;
+    --muted: #475569;
+    --card: #f8fafc;
+    --acc: #0369a1;
+    --chip: #e2e8f0;
+    --chip-fg: #0f172a;
+    --link: #1d4ed8;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.65;
+}
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: clamp(16px, 2.5vw, 32px);
+}
+header {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0 28px;
+}
+h1 {
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.1;
+  margin: 0;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: clamp(14px, 2.2vw, 16px);
+}
+.grid {
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+  }
+}
+section {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+h2 {
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+.pillset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pill {
+  background: var(--chip);
+  color: var(--chip-fg);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+ul {
+  padding-left: 18px;
+  margin: 10px 0;
+}
+li {
+  margin: 6px 0;
+}
+.two-col {
+  columns: 2;
+  column-gap: 18px;
+}
+@media (max-width: 640px) {
+  .two-col {
+    columns: 1;
+  }
+}
+footer {
+  margin: 28px 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.accent {
+  color: var(--acc);
+  font-weight: 600;
+}
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.kpi {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+.kpi strong {
+  display: block;
+  font-size: 22px;
+}
+.small {
+  font-size: 13px;
+  color: var(--muted);
+}
+.list-compact li {
+  margin: 2px 0;
+}
